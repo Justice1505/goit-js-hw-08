@@ -15,17 +15,17 @@ const imagesLibrary = {
 function makeGalleryItems(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `<li>
+      return `
       <a class="gallery__item" href="${original}">
         <img class="gallery__image" src="${preview}" alt="${description}" />
-      </a> </li>`;
+      </a> `;
     })
     .join('');
 }
 
 imagesLibrary.itemsList.innerHTML = makeGalleryItems(galleryItems);
 
-let gallery = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   showCounter: false,
   disableScroll: false,
   captionsData: 'alt',
@@ -35,10 +35,10 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 // console.log(gallery);
 
-imagesLibrary.itemsList.addEventListener('click', onImgClick);
+// imagesLibrary.itemsList.addEventListener('click', onImgClick);
 
-function onImgClick(e) {
-  e.preventDefault();
+// function onImgClick(e) {
+//   e.preventDefault();
 
-  gallery.open('.gallery');
-}
+//   gallery.open('.gallery');
+// }
